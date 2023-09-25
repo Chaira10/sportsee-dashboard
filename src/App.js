@@ -2,6 +2,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import UserInfo from './components/UserInfo';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   const userId = 12;
@@ -9,7 +10,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Sidebar />
-      <UserInfo userId={userId}/>
+      <Dashboard />
     </div>
   );
 }

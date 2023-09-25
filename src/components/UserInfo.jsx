@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { getUserInfo } from '../apiService';
+import { getUsers } from '../ServiceApi'; 
+import './UserInfo.css';
 
 function UserInfo({ userId }) {
     const [userData, setUserData] = useState(null);
     useEffect(() => {
-        getUserInfo(userId)
-          .then((response) => {
-            setUserData(response.data);
+        getUsers(userId)
+          .then((user) => { // Utilisez "user" au lieu de "response.data"
+            setUserData(user);
           })
           .catch((error) => {
             console.error('Erreur lors de la récupération des données utilisateur : ', error);
@@ -17,11 +18,11 @@ function UserInfo({ userId }) {
         return <div>Chargement en cours...</div>;
       }
   return (
-    <div>
-      <span>Bonjour <p>{userData.firstName}</p></span>
-      <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+    <div className="text-container">
+      <span className="text-1">Bonjour <p className="text-name">{userData.firstName}</p></span>
+      <p className="text-2">Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
     </div>
   )
 }
 
-export default UserInfo
+export default UserInfo;

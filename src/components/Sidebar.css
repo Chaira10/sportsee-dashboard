@@ -1,13 +1,20 @@
 .sidebar {
     display: flex;
     flex-direction: column; 
-    align-items: flex-start; 
-    height: 100vh; 
+    /* align-items: flex-start;  */
+    height: 100%; 
     background-color: black; 
-    padding: 20px; 
-    max-width: 60px;
+    padding: 0 20px; 
+    /* max-width: 60px; */
     box-shadow: 1px 2px 5px 3px rgba(0,0,0,0.16);
     min-height: 100vh;
+    width: 50px;
+    margin-right: 0%;
+    position: fixed;
+    top: 80px; 
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 60px;
   }
   
   .btn-container {
@@ -42,8 +49,8 @@
 
   
   .copyright-txt {
-    /* display: flex; */
-    margin-top: 250px;
+    display: flex;
+    margin-top: 50px;
     text-align: center;
     transform: rotate(270deg);
     /* transform-origin: left bottom; */
