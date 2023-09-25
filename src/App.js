@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Sidebar />
-      <Dashboard />
+      <Dashboard userId={userId}/>
     </div>
   );
 }

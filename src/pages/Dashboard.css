@@ -1,3 +1,7 @@
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
 .container-dashboard {
     width: 92vw;
     position: fixed;
@@ -67,9 +71,22 @@
   }
 
   .side-text {
-
+    margin-left: 10px;
   }
 
   .card-side {
     /* display:flex; */
+  }
+
+  .side-p {
+    text-align: start;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 11px;
+  }
+
+  .side-t {
+    margin-top: 5px;
+    text-align: start;
+
   }
