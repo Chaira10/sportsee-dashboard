@@ -36,7 +36,24 @@ export async function getUsers(userId) {
     }
   }
 
+  export async function getDailyActivity(userId) {
+    try {
+      const response = await axios.get(`${API_BASE_URL}/activities`);
+      const activitiesData = response.data;
+      
+      // Recherchez l'utilisateur avec l'ID spécifié
+      const userActivities = activitiesData.find((userActivity) => userActivity.userId === userId);
   
+      if (userActivities) {
+        return userActivities.sessions;
+      } else {
+        // Si les données de l'utilisateur ne sont pas trouvées, renvoyez une erreur ou une valeur par défaut
+        throw new Error('Données d\'activité non trouvées pour cet utilisateur');
+      }
+    } catch (error) {
+      throw error;
+    }
+  }
   
   
   

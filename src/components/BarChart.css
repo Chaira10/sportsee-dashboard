@@ -1,0 +1,17 @@
+.recharts-default-legend {
+    margin: 0 15px 15px 0 !important; 
+}
+
+.legend-item-0 {
+    margin-right: 30px !important ;
+}
+
+.recharts-legend-icon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+    border-radius: 50%; /* Arrondit le rond */
+    background-color: black; /* Couleur du rond */
+  }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import UserInfo from '../components/UserInfo.jsx';
 import './Dashboard.css';
 import { getUsers } from '../ServiceApi';
+import BarCharts from '../components/BarChart.jsx';
 
 function Dashboard() {
   const userId = 12;
@@ -31,7 +32,9 @@ function Dashboard() {
         <div className="row">
           <div className="col-8">
             <div className="row">
-              <div className="graphique">graphique</div>
+              <div className="graphique">
+              <BarCharts userId={userId} />
+              </div>
             </div>
             <div className="row">
               <div className="card-chart">session</div>
