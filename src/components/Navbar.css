@@ -1,0 +1,41 @@
+/* Navbar.css */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black; /* Couleur de fond de la barre de navigation */
+    padding: 10px 20px; /* Espace intérieur de la barre de navigation */
+    color: #fff; /* Couleur du texte */
+    font-size: 21px;
+  }
+  
+  .img-container {
+    margin-right: 130px;
+  }
+  
+  .nav-logo {
+    max-width: 100%; 
+  }
+  
+  .link-container {
+    flex: 2; 
+  }
+  
+  .navbar {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between; 
+    margin: 0;
+  }
+  
+  .nav-link {
+    margin: 0 10px; /* Espacement horizontal entre les liens */
+    cursor: pointer;
+  }
+  
+  /* Style pour les liens au survol */
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  
