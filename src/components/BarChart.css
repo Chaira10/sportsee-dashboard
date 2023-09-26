@@ -17,3 +17,52 @@
     /* border-radius: 50%;  */
 
   }
+
+  .custom-tooltip {
+    background-color: rgba(255, 255, 255, 0.8); /* Couleur de fond */
+    color: black; /* Couleur du texte */
+    padding: 5px 10px; /* Espacement intérieur pour l'infobulle */
+    border-radius: 5px; /* Coins arrondis */
+  }
+
+  /* .recharts-default-tooltip {
+    background-color: red;
+  } */
+
+  /* .recharts-default-tooltip {
+    background-color: red !important;
+  } */
+  
+  /* Style de l'étiquette de l'infobulle */
+  /* .recharts-tooltip-label {
+    font-weight: bold !important;
+  } */
+  
+  /* Style des éléments de l'infobulle */
+  /* .recharts-tooltip-item {
+    color: red !important;
+  } */
+  
+  /* Style des éléments de l'infobulle */
+  /* .recharts-tooltip-item-name {
+    color: white !important;
+  } */
+
+  .recharts-tooltip-wrapper  {
+    background-color: red !important;
+
+  }
+
+  .tool0 {
+    color: white !important;
+    padding: 15px;
+    margin-bottom: 0%;
+
+  }
+
+  .tool1 {
+    color: white !important;
+    padding: 15px;
+    margin-top: 0%;
+
+  }

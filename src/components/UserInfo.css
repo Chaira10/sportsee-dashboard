@@ -1,16 +1,13 @@
 .text-container {
     display: flex;
     flex-direction: column;
-    
     align-items: flex-start;
-    /* width: 90%; */
 }
 
 .text-1 {
     font-size: 2rem; 
     display: inline;
     font-weight: bold;
-    /* text-align:start; */
 }
 
 .text-2 {

@@ -6,7 +6,7 @@ function AreaCharts({ userId }) {
     const [averageData, setAverageData] = useState([]);
 
     useEffect(() => {
-      // Utilisez la fonction getAverages pour récupérer les données d'activité moyenne
+      
       getAverages(userId)
         .then((averages) => {
           setAverageData(averages);
@@ -14,33 +14,51 @@ function AreaCharts({ userId }) {
         .catch((error) => {
           console.error('Erreur lors de la récupération des données d\'activité moyenne : ', error);
         });
-    }, [userId]); // Assurez-vous que cette dépendance est correctement configurée
+    }, [userId]); 
   
     const daysOfWeek = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 
-  // Formatez les données d'activité moyenne pour utiliser les lettres des jours de la semaine
-  const formattedData = averageData.map((session, index) => ({
-    name: daysOfWeek[index], // Utilisez la lettre correspondante au jour de la semaine
-    uv: session.sessionLength,
-  }));
+  
+    const formattedData = averageData.map((session, index) => ({
+        name: daysOfWeek[index], 
+        uv: session.sessionLength,
+        pv: session.sessionLength, 
+      }));
+
+      
   
     return (
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="99%" height={210}>
         <AreaChart
           width={500}
           height={500}
-          data={formattedData} // Utilisez les données formatées ici
+          data={formattedData} 
           margin={{
-            top: 10,
-            right: 30,
-            left: 0,
-            bottom: 0,
+            top: 0,
+            right: 0,
+            left: 5,
+            bottom: 5,
           }}
+          className={ 'darken-graph'}
         >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <Tooltip />
-          <Area type="monotone" dataKey="uv" stroke="white" fill="red" />
+          <CartesianGrid strokeDasharray="3 3" vertical={false} horizontal={false} fillOpacity={0.6}   />
+          <XAxis dataKey="name" tickLine={false} axisLine={false} tick={{stroke: 'white'}}  />
+          <Tooltip 
+          content={({ active, payload }) => {
+            if (active && payload && payload.length) {
+              const sessionLength = payload[0].payload.uv; 
+              return (
+                <div className="custom-tooltip">
+                  <p>{sessionLength} min</p>
+                </div>
+              );
+            }
+            return null;
+          }}
+        />
+          <Area type="monotone" dataKey="uv" stroke="white" strockWidth={2} fill="#EB3030" />
+          <Area type="monotone" dataKey="pv" stroke="white" strockWidth={2} fill="#EB3030" fillOpacity={0.6} />
+
         </AreaChart>
       </ResponsiveContainer>
     );

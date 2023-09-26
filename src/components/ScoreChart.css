@@ -1,0 +1,38 @@
+.circle-progress {
+    width: 200px;
+    height: 200px;
+    position: relative;
+
+  }
+  
+  .circle-svg {
+    transform: rotate(-90deg);
+  }
+  
+  .circle-background {
+    fill: transparent;
+    stroke: #FBFBFB;
+    stroke-width: 10;
+  }
+  
+  .circle-fill {
+    fill: transparent;
+    stroke: red; 
+    stroke-width: 10;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s;
+  }
+  
+  .circle-text {
+    font-size: 24px;
+    font-weight: bold;
+    fill: black;
+  }
+
+  .secondary-text {
+    font-size: 17px;
+    margin-top: 30px;
+    color: #444754 !important;
+    font-weight: 600;
+  }
+  

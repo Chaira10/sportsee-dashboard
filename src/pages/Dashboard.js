@@ -5,6 +5,8 @@ import { getUsers } from '../ServiceApi';
 import BarCharts from '../components/BarChart.jsx';
 import AreaCharts from '../components/AreaChart.jsx';
 import RadarsChart from '../components/RadarsChart.jsx';
+import PieCharts from '../components/PieCharts.jsx';
+import ScoreChart from '../components/ScoreChart.jsx';
 
 function Dashboard() {
   const userId = 12;
@@ -38,14 +40,17 @@ function Dashboard() {
               <BarCharts userId={userId} />
               </div>
             </div>
-            <div className="row">
+            <div className="row charts">
               <div className="card-chart session">
               <AreaCharts userId={userId} />
               </div>
               <div className="card-chart intensite">
               <RadarsChart userId={userId}  />
               </div>
-              <div className="card-chart">score</div>
+              <div className="card-chart score" >
+              {/* <PieCharts  userId={userId} /> */}
+              <ScoreChart userId={userId} />
+              </div>
             </div>
           </div>
           <div className="col-4 card-side">

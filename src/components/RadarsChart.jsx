@@ -21,8 +21,8 @@ function RadarsChart({ userId }) {
 
 
     return (
-        <ResponsiveContainer width="100%" height={300}>
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={performanceData}>
+        <ResponsiveContainer width="99%" height={210}>
+        <RadarChart cx="50%" cy="50%" outerRadius="51%" data={performanceData}>
           <PolarGrid />
           <PolarAngleAxis dataKey="kind" tickFormatter={(value) => {
             switch (value) {

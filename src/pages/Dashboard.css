@@ -7,13 +7,13 @@ p {
     position: fixed;
     left: 90px;
     height: 100%;
-    padding:  30px 55px;
+    padding:  15px 55px;
 }
 
 .container {
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    /* padding-right: 15px;
+    padding-left: 15px; */
     margin-right: auto;
     margin-left: auto;
     margin-top: 20px;
@@ -23,8 +23,13 @@ p {
     display: flex;
     flex-direction: row;
     /* flex-wrap: wrap; */
-    margin-right: -15px;
-    margin-left: -15px;
+    /* margin-right: -15px;
+    margin-left: -15px; */
+  }
+
+  .charts {
+    justify-content: space-between !important;
+
   }
 
   .col-8 {
@@ -40,30 +45,22 @@ p {
   .graphique {
     background-color: #FBFBFB;
     width: 100%;
-    height: 39vh;
+    height: 35vh;
     border-radius: 15px;
-    padding-top: 20px;
+    padding-top: 10px;
   }
 
-  .card-chart {
-    border-radius: 8px; 
-    padding: 15px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 30px;
-    width: 27%;
-    height: 27vh;
-    margin-right: 18px;
-  }
+
 
   .side-card {
     display:flex;
     flex-direction: row;
     border-radius: 8px;
     padding: 15px;
-    background-color: lightgray;
-    margin-bottom: 60px;
+    background-color: #FBFBFB;
+    /* margin-bottom: auto; */
     width: 180px;
-    margin-left: 30px;
+    /* margin-left: 30px; */
 
   }
 
@@ -76,7 +73,12 @@ p {
   }
 
   .card-side {
-    /* display:flex; */
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    margin-left: 30px;
+    
   }
 
   .side-p {
@@ -89,15 +91,65 @@ p {
   .side-t {
     margin-top: 5px;
     text-align: start;
+    color: #444754 !important;
+    font-weight: 500;
 
   }
 
+  /* .card-chart {
+    border-radius: 8px; 
+    padding: 11px 1px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    width: 300px;
+    height: 300px;
+  } */
   .session {
     background-color: red;
-    padding: 15px; 
+    /* margin-right: auto; */
+    width: 210px;
+    height: 210px;
+    margin-top: 30px;
+    border-radius: 8px; 
 
   }
 
   .intensite {
     background-color: #282D30;
+    /* margin-right: auto;
+    margin-left: auto; */
+
+    width: 210px;
+    height: 210px;
+    margin-top: 30px;
+    border-radius: 8px; 
+  }
+
+  .score {
+    background-color: #FBFBFB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-right: auto;
+    margin-left: 21px; */
+    /* margin-right: 21px; */
+    width: 210px;
+    height: 210px;
+    margin-top: 30px;
+    border-radius: 8px; 
+
+    
+  }
+
+  .darken-graph {
+    /* background-color: rgb(150, 7, 7); */
+    /* opacity: 0.7;  */
+    /* transition: opacity 0.3s ease;  */
+  }
+
+  .custom-tooltip{
+    /* background-color: rgb(150, 7, 7); */
+    /* opacity: 0.9; */
+    /* opacity: 0.5;  */
+    /* transition: opacity 0.3s ease; */
   }
