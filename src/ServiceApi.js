@@ -77,11 +77,40 @@ export async function getAverages(userId) {
   }
 }
 
-export async function getPerformance() {
+export async function getPerformanceData(userId) {
   try {
     const response = await axios.get(`${API_BASE_URL}/performance`);
-    return response.data;
+    const performanceData = response.data;
+    
+    // Recherchez les données de performance pour l'utilisateur avec l'ID spécifié
+    const userPerformance = performanceData.find((performance) => performance.userId === userId);
+
+    if (userPerformance) {
+      const userPerformanceData = userPerformance.data.map((entry) => {
+        // Remplacez le numéro par le libellé correspondant à partir de kind
+        const label = userPerformance.kind[entry.kind.toString()] || '';
+        return { ...entry, kind: label };
+      });
+    // const customLabelOrder = ["Intensité", "Vitesse", "Force", "Endurance", "Énergie", "Cardio"];
+    const customLabelOrder = ["intensity","speed","strength","endurance", "energy","cardio"];
+    const sortedUserPerformanceData = userPerformanceData.sort((a, b) => {
+      const labelA = customLabelOrder.indexOf(a.kind);
+      const labelB = customLabelOrder.indexOf(b.kind);
+      return labelA - labelB;
+    });
+
+    return sortedUserPerformanceData;
+    } else {
+      // Si les données de performance pour l'utilisateur ne sont pas trouvées, renvoyez une erreur ou une valeur par défaut
+      throw new Error('Données de performance non trouvées pour cet utilisateur');
+    }
   } catch (error) {
     throw error;
   }
 }
+
+
+
+
+
+
