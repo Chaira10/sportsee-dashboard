@@ -3,6 +3,7 @@ import UserInfo from '../components/UserInfo.jsx';
 import './Dashboard.css';
 import { getUsers } from '../ServiceApi';
 import BarCharts from '../components/BarChart.jsx';
+import AreaCharts from '../components/AreaChart.jsx';
 
 function Dashboard() {
   const userId = 12;
@@ -37,7 +38,9 @@ function Dashboard() {
               </div>
             </div>
             <div className="row">
-              <div className="card-chart">session</div>
+              <div className="card-chart session">
+              <AreaCharts userId={userId} />
+              </div>
               <div className="card-chart">intensité</div>
               <div className="card-chart">score</div>
             </div>

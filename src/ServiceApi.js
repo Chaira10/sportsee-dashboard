@@ -55,23 +55,23 @@ export async function getUsers(userId) {
     }
   }
   
-  
-  
-  
-  
-export async function getActivity() {
-  try {
-    const response = await axios.get(`${API_BASE_URL}/activities`);
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
-}
 
-export async function getAverage() {
+export async function getAverages(userId) {
   try {
     const response = await axios.get(`${API_BASE_URL}/averages`);
-    return response.data;
+    const averagesData = response.data;
+
+    // Recherchez l'utilisateur avec l'ID spécifié
+    const userAverages = averagesData.find(
+      (userAverage) => userAverage.userId === userId
+    );
+
+    if (userAverages) {
+      return userAverages.sessions;
+    } else {
+      // Si les données de l'utilisateur ne sont pas trouvées, renvoyez une erreur ou une valeur par défaut
+      throw new Error("Données d'activité moyenne non trouvées pour cet utilisateur");
+    }
   } catch (error) {
     throw error;
   }
