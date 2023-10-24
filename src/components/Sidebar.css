@@ -42,14 +42,19 @@
     align-items: flex-start; 
     margin-top: 20px; 
     color: #fff; 
+    height: 100%;
   }
 
   
   .copyright-txt {
     display: flex;
     margin-top: 50px;
+    margin-right: 150px;
     text-align: center;
     transform: rotate(270deg);
+    width: 100%;
+    white-space: nowrap;
+    text-align: end;
     /* transform-origin: left bottom; */
     /* white-space: nowrap; Évitez que le texte ne passe à la ligne */
     /* writing-mode: vertical-rl;  */

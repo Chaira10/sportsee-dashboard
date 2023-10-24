@@ -45,7 +45,7 @@ p {
   .graphique {
     background-color: #FBFBFB;
     width: 100%;
-    height: 35vh;
+    height: 100%;
     border-radius: 15px;
     padding-top: 10px;
   }
@@ -96,21 +96,25 @@ p {
 
   }
 
-  /* .card-chart {
+  .card-chart {
     border-radius: 8px; 
     padding: 11px 1px; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-top: 30px;
-    width: 300px;
-    height: 300px;
-  } */
+    width: 33%;
+    height: 250px;
+    /* width: 300px;
+    height: 300px; */
+  }
   .session {
     background-color: red;
     /* margin-right: auto; */
-    width: 210px;
-    height: 210px;
+    width: 30%;
+    height:  250px;
     margin-top: 30px;
     border-radius: 8px; 
+    min-height: 230px;
+    min-width: 30%;
 
   }
 
@@ -118,23 +122,26 @@ p {
     background-color: #282D30;
     /* margin-right: auto;
     margin-left: auto; */
-
-    width: 210px;
-    height: 210px;
+    min-height: 230px;
+    min-width: 30%;
+    width: 33%;
+    height: 250px;
     margin-top: 30px;
     border-radius: 8px; 
   }
 
   .score {
-    background-color: #FBFBFB;
+    background-color: #FBFBFB !important;
     display: flex;
     align-items: center;
     justify-content: center;
     /* margin-right: auto;
     margin-left: 21px; */
     /* margin-right: 21px; */
-    width: 210px;
-    height: 210px;
+    min-height: 230px;
+    min-width: 30%;
+    width: 30%;
+    height:  250px;
     margin-top: 30px;
     border-radius: 8px; 
 

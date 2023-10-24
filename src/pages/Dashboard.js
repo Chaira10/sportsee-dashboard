@@ -7,6 +7,8 @@ import AreaCharts from '../components/AreaChart.jsx';
 import RadarsChart from '../components/RadarsChart.jsx';
 import PieCharts from '../components/PieCharts.jsx';
 import ScoreChart from '../components/ScoreChart.jsx';
+import LineCharts from '../components/LineChart.jsx';
+
 
 function Dashboard() {
   const userId = 12;
@@ -42,14 +44,14 @@ function Dashboard() {
             </div>
             <div className="row charts">
               <div className="card-chart session">
-              <AreaCharts userId={userId} />
+              <LineCharts userId={userId} />
               </div>
               <div className="card-chart intensite">
               <RadarsChart userId={userId}  />
               </div>
               <div className="card-chart score" >
               {/* <PieCharts  userId={userId} /> */}
-              <ScoreChart userId={userId} />
+              <PieCharts userId={userId} />
               </div>
             </div>
           </div>

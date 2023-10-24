@@ -21,10 +21,10 @@ function RadarsChart({ userId }) {
 
 
     return (
-        <ResponsiveContainer width="99%" height={210}>
-        <RadarChart cx="50%" cy="50%" outerRadius="51%" data={performanceData}>
-          <PolarGrid />
-          <PolarAngleAxis dataKey="kind" tickFormatter={(value) => {
+      // <div className="profile-performance">
+        <ResponsiveContainer width="100%" height="100%">
+        <RadarChart   data={performanceData} cx="50%" cy="50%"  outerRadius={'70%'}>
+          <PolarAngleAxis dataKey="kind" axisLine={false} tickLine={false}  tickSize={25} stroke="#FFFFFF" tickFormatter={(value) => {
             switch (value) {
               case 'cardio':
                 return 'Cardio';
@@ -42,9 +42,12 @@ function RadarsChart({ userId }) {
                 return value;
             }
           }} />
-          <Radar name="Performance" dataKey="value" stroke="red" fill="red" fillOpacity={0.6} />
+          <PolarGrid radialLines={false} stroke="white" strokeWidth={2} polarRadius={[10, 22, 45, 70, 100]} className="hidden-line"/>
+
+          <Radar name="Performance" dataKey="value" stroke="red" fill="#FF0101" fillOpacity={0.6} />
         </RadarChart>
       </ResponsiveContainer>
+      // {/* </div> */}
     );
   }
 
