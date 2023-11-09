@@ -1,0 +1,30 @@
+.recharts-default-legend {
+    margin: 0 15px 15px 0 !important; 
+}
+
+.legend-item-0 {
+    margin-right: 30px !important ;
+}
+
+  .custom-tooltip {
+    background-color: rgba(255, 255, 255, 0.8); 
+    color: black; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+  }
+
+  .recharts-tooltip-wrapper  {
+    background-color: red !important;
+  }
+
+  .tool0 {
+    color: white !important;
+    padding: 15px;
+    margin-bottom: 0%;
+  }
+
+  .tool1 {
+    color: white !important;
+    padding: 15px;
+    margin-top: 0%;
+  }

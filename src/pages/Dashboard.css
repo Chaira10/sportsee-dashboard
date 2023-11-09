@@ -12,8 +12,6 @@ p {
 
 .container {
     width: 100%;
-    /* padding-right: 15px;
-    padding-left: 15px; */
     margin-right: auto;
     margin-left: auto;
     margin-top: 20px;
@@ -22,9 +20,6 @@ p {
 .row {
     display: flex;
     flex-direction: row;
-    /* flex-wrap: wrap; */
-    /* margin-right: -15px;
-    margin-left: -15px; */
   }
 
   .charts {
@@ -50,18 +45,13 @@ p {
     padding-top: 10px;
   }
 
-
-
   .side-card {
     display:flex;
     flex-direction: row;
     border-radius: 8px;
     padding: 15px;
     background-color: #FBFBFB;
-    /* margin-bottom: auto; */
     width: 180px;
-    /* margin-left: 30px; */
-
   }
 
   .side-logo img {
@@ -76,9 +66,8 @@ p {
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
     margin-left: 30px;
-    
   }
 
   .side-p {
@@ -93,39 +82,32 @@ p {
     text-align: start;
     color: #444754 !important;
     font-weight: 500;
-
   }
 
   .card-chart {
     border-radius: 8px; 
-    padding: 11px 1px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1px 1px; 
     margin-top: 30px;
     width: 33%;
     height: 250px;
-    /* width: 300px;
-    height: 300px; */
+
   }
   .session {
     background-color: red;
-    /* margin-right: auto; */
-    width: 30%;
-    height:  250px;
+    min-height: 210px;
+    min-width: 30%;
+    width: 33%;
+    height: 210px;
     margin-top: 30px;
     border-radius: 8px; 
-    min-height: 230px;
-    min-width: 30%;
-
   }
 
   .intensite {
     background-color: #282D30;
-    /* margin-right: auto;
-    margin-left: auto; */
-    min-height: 230px;
+    min-height: 210px;
     min-width: 30%;
     width: 33%;
-    height: 250px;
+    height: 210px;
     margin-top: 30px;
     border-radius: 8px; 
   }
@@ -133,30 +115,10 @@ p {
   .score {
     background-color: #FBFBFB !important;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    /* margin-right: auto;
-    margin-left: 21px; */
-    /* margin-right: 21px; */
-    min-height: 230px;
+    min-height: 210px;
     min-width: 30%;
     width: 30%;
-    height:  250px;
+    height: 210px;
     margin-top: 30px;
     border-radius: 8px; 
-
-    
-  }
-
-  .darken-graph {
-    /* background-color: rgb(150, 7, 7); */
-    /* opacity: 0.7;  */
-    /* transition: opacity 0.3s ease;  */
-  }
-
-  .custom-tooltip{
-    /* background-color: rgb(150, 7, 7); */
-    /* opacity: 0.9; */
-    /* opacity: 0.5;  */
-    /* transition: opacity 0.3s ease; */
   }

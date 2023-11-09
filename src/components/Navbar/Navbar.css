@@ -31,11 +31,10 @@ nav {
   }
   
   .nav-link {
-    margin: 0 10px; /* Espacement horizontal entre les liens */
+    margin: 0 10px;
     cursor: pointer;
   }
   
-  /* Style pour les liens au survol */
   .nav-link:hover {
     text-decoration: underline;
   }

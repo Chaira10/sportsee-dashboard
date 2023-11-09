@@ -1,57 +1,47 @@
-import React, { useEffect, useState } from 'react';
-import UserInfo from '../components/UserInfo.jsx';
+import React from 'react';
+import UserInfo from '../components/UserInfo/UserInfo.jsx';
 import './Dashboard.css';
-import { getUsers } from '../ServiceApi';
-import BarCharts from '../components/BarChart.jsx';
-import AreaCharts from '../components/AreaChart.jsx';
-import RadarsChart from '../components/RadarsChart.jsx';
-import PieCharts from '../components/PieCharts.jsx';
-import ScoreChart from '../components/ScoreChart.jsx';
-import LineCharts from '../components/LineChart.jsx';
+import BarCharts from '../components/Charts/BarChart/BarChart.jsx';
+import RadarsChart from '../components/Charts/RadarChart/RadarsChart.jsx';
+import PieCharts from '../components/Charts/PieChart/PieCharts.jsx';
+import LineCharts from '../components/Charts/LineChart/LineChart.jsx';
+import { useUser } from '../context/Context.jsx';
+
 
 
 function Dashboard() {
-  const userId = 12;
-  const [userData, setUserData] = useState(null);
 
-  useEffect(() => {
-    // Utilisez la fonction getUsers pour récupérer les données de l'utilisateur spécifié
-    getUsers(userId)
-      .then((user) => {
-        setUserData(user);
-      })
-      .catch((error) => {
-        console.error('Erreur lors de la récupération des données utilisateur : ', error);
-      });
-  }, [userId]);
+  const {userData} = useUser();
+  console.log(userData);
 
   // Vérifiez si userData est défini avant d'accéder à ses propriétés
-  const calorieCount = userData?.keyData.calorieCount;
-  const proteinCount = userData?.keyData.proteinCount;
-  const carbohydrateCount = userData?.keyData.carbohydrateCount;
-  const lipidCount = userData?.keyData.lipidCount;
+  const calorieCount = userData?.keyData?.calorieCount;
+  const proteinCount = userData?.keyData?.proteinCount;
+  const carbohydrateCount = userData?.keyData?.carbohydrateCount;
+  const lipidCount = userData?.keyData?.lipidCount;
 
   return (
     <div className="container-dashboard">
-      <UserInfo userId={userId} />
+      <UserInfo />
       <div className="container">
         <div className="row">
           <div className="col-8">
             <div className="row">
               <div className="graphique">
-              <BarCharts userId={userId} />
+              <BarCharts    />
               </div>
             </div>
             <div className="row charts">
               <div className="card-chart session">
-              <LineCharts userId={userId} />
+
+              <LineCharts   />
               </div>
               <div className="card-chart intensite">
-              <RadarsChart userId={userId}  />
+              <RadarsChart   />
               </div>
               <div className="card-chart score" >
-              {/* <PieCharts  userId={userId} /> */}
-              <PieCharts userId={userId} />
+
+              <PieCharts />
               </div>
             </div>
           </div>

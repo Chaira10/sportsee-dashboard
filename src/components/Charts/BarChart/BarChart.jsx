@@ -1,7 +1,9 @@
 import React, { PureComponent, useEffect, useState  } from 'react';
-import { getDailyActivity } from '../ServiceApi';
+import { getDailyActivity } from '../../../ServiceApi';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import './BarChart.css';
+import { useUser } from '../../../context/Context';
+
 
 function customizeName(name) {
   if (name === 'Poids (kg)') {
@@ -14,28 +16,27 @@ function customizeName(name) {
 }
 
 function BarCharts({ userId }) {
-  const [dailyActivityData, setDailyActivityData] = useState([]);
+  const { activityData,error } = useUser();
+  console.log(activityData);
 
-  useEffect(() => {
-    getDailyActivity(userId)
-      .then((data) => {
-        // Ajouter une propriété numérique 'dayNumber' à chaque entrée
-        const dataWithDayNumbers = data.map((entry, index) => ({
-          ...entry,
-          dayNumber: index + 1, // Commence à partir de 1
-        }));
-        setDailyActivityData(dataWithDayNumbers);
-      })
-      .catch((error) => {
-        console.error('Erreur lors de la récupération des données d\'activité : ', error);
-      });
-  }, [userId]);
+
+  if (error) {
+    return <div>Erreur: {error.message}</div>; 
+  } else if (!activityData) {
+    return <div>Chargement en cours...</div>;
+  }
+
+  const dataWithDayNumbers = activityData.map((entry, index) => ({
+    ...entry,
+    dayNumber: index + 1, 
+  }));
+
 
   return (
     <div>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart
-          data={dailyActivityData}
+          data={dataWithDayNumbers}
           margin={{
             top: 5,
             right: 5,
@@ -48,7 +49,7 @@ function BarCharts({ userId }) {
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
 
           <XAxis dataKey="dayNumber" padding={{ bottom: 20 }} tick={{stroke: 'lightgray', strokeWidth: 1}} tickLine={false}  />
-          <YAxis orientation="right" tickLine={false} />
+          <YAxis orientation="right" tickLine={false} axisLine={false}  />
           <Tooltip
             content={({ payload }) => {
               if (payload && payload.length > 0) {
