@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect }  from 'react';
 import { PieChart, Pie, ResponsiveContainer, Cell, } from 'recharts';
 import { useUser } from '../../../context/Context';
 
@@ -8,11 +8,28 @@ function PieCharts({ userId }) {
     const { userData,error } = useUser(); 
     console.log(userData);
 
+    const [circleRadius, setCircleRadius] = useState('29%');
+
+    useEffect(() => {
+      const handleResize = () => {
+        setCircleRadius(window.innerWidth > 1400 ? '21%' : '29%');
+      };
+  
+      window.addEventListener('resize', handleResize);
+      handleResize(); // Appeler la fonction au chargement pour définir la taille initiale
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []); 
+
       if (error) {
         return <div>Erreur: {error.message}</div>; 
       } else if (!userData) {
         return <div>Chargement en cours...</div>;
       }
+
+      
     const userScore = userData.todayScore;
     const chartData = [
         { name: 'Score', value: userScore * 100 },
@@ -28,7 +45,7 @@ function PieCharts({ userId }) {
 
             <PieChart >
 
-        <circle cx="50%" cy="50%" fill="white" r="30%"></circle>
+        <circle cx="50%" cy="50%" fill="white" r={circleRadius}></circle>
         <text
           x="15%"
           y="10%"
