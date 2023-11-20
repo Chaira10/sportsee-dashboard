@@ -39,8 +39,28 @@ function BarCharts({ userId }) {
     <div>
     {/* Conteneur ResponsiveContainer pour rendre le graphique réactif */}
       <ResponsiveContainer width="100%" height={300}>
+
       {/* BarChart composant de Recharts avec données et paramètres de style */}
         <BarChart data={dataWithDayNumbers} margin={{top: 5,right: 5,left: 5,bottom: 0,}} barSize={10} barGap={10} >
+        <text
+          // Position horizontale du texte, 15% de la largeur du conteneur SVG
+          x="13%"
+          // Position verticale du texte, 10% de la hauteur du conteneur SVG
+          y="9%"
+          // Styles du texte
+          style={{
+            fontFamily: "Roboto",
+            fontSize: 17,
+            fontWeight: 700,
+            // Couleur de remplissage du texte
+            fill: "#282D30",
+          }}
+          width={200}
+          // Ancrage horizontal du texte, "middle" le centre horizontalement
+          textAnchor="middle"
+        >
+          Activité quotidienne
+        </text>
          {/* Grille cartésienne pour guider le regard sur le graphique */}
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
            {/* Axe X représentant les numéros de jour avec des paramètres de style */}

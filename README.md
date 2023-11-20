@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# Project 12 - Développez un tableau de bord d'analytics avec React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![sportsee](./public/13.png)
 
-## Available Scripts
+Ce projet a été démarré avec Create React App.
 
-In the project directory, you can run:
+## 1. Back-end
 
-### `npm start`
+Dans le répertoire back-end, clonez le repo à partir d'[ici](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Installer les dépendances avec yarn install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Lancer le back-end avec yarn dev port 3000 par défaut
 
-### `npm test`
+## 2. Endpoints
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2.1 Possible endpoints
 
-### `npm run build`
+This project includes four endpoints that you will be able to use:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `http://localhost:3000/user/${userId}` - récupère les informations d'un utilisateur. Ce premier point d'accès comprend l'identifiant de l'utilisateur, des informations sur l'utilisateur (prénom, nom et âge), le score du jour (todayScore) et des données clés (calories, macronutriments, etc.).
+- `http://localhost:3000/user/${userId}/activity` - récupère l'activité d'un utilisateur jour par jour avec les kilogrammes et les calories.
+- `http://localhost:3000/user/${userId}/average-sessions` - récupère la moyenne des sessions d'un utilisateur par jour. La semaine commence le lundi.
+- `http://localhost:3000/user/${userId}/performance` - récupère les performances d'un utilisateur (énergie, endurance, etc.). Attention, pour l'instant, seuls deux utilisateurs ont été simulés. Ils ont respectivement les userId 12 et 18.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3 Dans le répertoire Front-end
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Installez les dépendances avec npm install
 
-### `npm run eject`
+Lancer le front-end avec npm start port 3001 par défaut
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Ouvrez `http://localhost:3001` pour l'afficher dans votre navigateur.
