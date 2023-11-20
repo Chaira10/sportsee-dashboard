@@ -1,6 +1,6 @@
-# Project 12 - Développez un tableau de bord d'analytics avec React
+# Projet 12 - Développez un tableau de bord d'analytics avec React
 
-![sportsee](./public/13.png)
+![sportsee](./public/sportsee4.png)
 
 Ce projet a été démarré avec Create React App.
 
