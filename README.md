@@ -16,7 +16,7 @@ Lancer le back-end avec yarn dev port 3000 par défaut
 
 ### 2.1 Possible endpoints
 
-This project includes four endpoints that you will be able to use:
+Ce projet comprend quatre points d'accès que vous pourrez utiliser :
 
 - `http://localhost:3000/user/${userId}` - récupère les informations d'un utilisateur. Ce premier point d'accès comprend l'identifiant de l'utilisateur, des informations sur l'utilisateur (prénom, nom et âge), le score du jour (todayScore) et des données clés (calories, macronutriments, etc.).
 - `http://localhost:3000/user/${userId}/activity` - récupère l'activité d'un utilisateur jour par jour avec les kilogrammes et les calories.
