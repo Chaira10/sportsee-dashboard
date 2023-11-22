@@ -6,12 +6,16 @@ import RadarsChart from '../components/Charts/RadarChart/RadarsChart.jsx';
 import PieCharts from '../components/Charts/PieChart/PieCharts.jsx';
 import LineCharts from '../components/Charts/LineChart/LineChart.jsx';
 import { useUser } from '../context/Context.jsx';
+import Navbar from '../components/Navbar/Navbar';
+import Sidebar from '../components/SideBar/Sidebar';
 
 
 
 function Dashboard() {
   // Récupération des données d'utilisateur depuis le contexte
   const {userData} = useUser();
+  // const {userData} = useContext(useUser());
+
   console.log(userData);
 
   // Vérifiez si userData est défini avant d'accéder à ses propriétés
@@ -22,7 +26,10 @@ function Dashboard() {
   const lipidCount = userData?.keyData?.lipidCount;
 
   return (
+
     <div className="container-dashboard">
+          <Navbar />
+      <Sidebar />
      {/* Affichage des informations utilisateur générales */}
       <UserInfo />
         {/* Contenu principal du dashboard */}

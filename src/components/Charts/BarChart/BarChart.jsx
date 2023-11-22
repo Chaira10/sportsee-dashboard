@@ -17,7 +17,7 @@ function customizeName(name) {
   }
 }
 // Fonction de composant BarCharts prenant userId comme propriété.
-function BarCharts({ userId }) {
+function BarCharts() {
   // Utilisation du hook useUser pour obtenir activityData et error depuis le contexte.
   const { activityData,error } = useUser();
   console.log(activityData);
@@ -58,9 +58,7 @@ function BarCharts({ userId }) {
           width={200}
           // Ancrage horizontal du texte, "middle" le centre horizontalement
           textAnchor="middle"
-        >
-          Activité quotidienne
-        </text>
+        >Activité quotidienne</text>
          {/* Grille cartésienne pour guider le regard sur le graphique */}
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
            {/* Axe X représentant les numéros de jour avec des paramètres de style */}

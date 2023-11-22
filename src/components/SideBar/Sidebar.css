@@ -9,7 +9,7 @@
     width: 50px;
     margin-right: 0%;
     position: fixed;
-    top: 69px; 
+    top: 60px; 
     left: 0;
     overflow-x: hidden;
     padding-top: 60px;
@@ -21,6 +21,7 @@
     align-items: center; 
     flex: 1; 
     justify-content: center;
+    margin-top: 37px;
   }
   
   .side-container {
@@ -48,7 +49,7 @@
   
   .copyright-txt {
     display: flex;
-    margin-top: 50px;
+    margin-top: 42px;
     margin-right: 150px;
     text-align: center;
     transform: rotate(270deg);

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import { useUser } from '../../../context/Context';
 
 
-function RadarsChart({ userId }) {
+function RadarsChart() {
    // Récupération des données de performance et gestion des erreurs
   const {performanceData, error} = useUser();
   console.log(performanceData);
@@ -14,7 +14,7 @@ function RadarsChart({ userId }) {
     return <div>Chargement en cours...</div>;
   }
 
-   // Mapping des types de données de performance à des noms compréhensibles
+   // Mapping des types de données de performance à la traduction
   const kinds = {
     intensity: 'Intensité',
     cardio: 'Cardio',
@@ -31,18 +31,15 @@ function RadarsChart({ userId }) {
     };
 });
 
-
+console.log(translatedData);
     return (
       // Conteneur réactif pour le graphique radar
         <ResponsiveContainer width="100%" height="100%" >
          {/* Graphique radar */}
         <RadarChart data={translatedData} cx="50%" cy="50%"  outerRadius={'65%'} fill="#FFFFFF">
          {/* Axe radial pour les valeurs */}
-          <PolarRadiusAxis axisLine={false} tick={false} />
           {/* Axe radial pour les catégories (types de performance) */}
           <PolarAngleAxis orient="inner" dataKey="kind" tickLine={false} stroke="#FFFFFF" tick={{ fontSize: 12 }}/>
-          {/* Axe radial supplémentaire (facultatif, désactivé ici) */}
-          <PolarRadiusAxis axisLine={false} tick={false} />
           {/* Grille radiale pour guider la lecture des valeurs */}
           <PolarGrid radialLines={false} stroke="white" strokeWidth={1} />
           {/* Série radar représentant les données de performance */}

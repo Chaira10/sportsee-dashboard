@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect} from 'react';
+import { useParams,Navigate  } from 'react-router-dom';
 import { getUsers, getDailyActivity, getAverages,getPerformanceData } from '../services/api';
 
 // Création d'un contexte utilisateur
@@ -8,8 +9,14 @@ const UserContext = createContext();
 export function useUser() {
   return useContext(UserContext);
 }
+
+
 // Composant de fournisseur utilisateur qui gère les données utilisateur
 export function UserProvider({ children }) {
+    // Utilise useParams pour récupérer l'ID utilisateur depuis l'URL
+  const { userId } = useParams(); 
+  console.log(userId);
+    
   // Initialisation des états pour stocker les données utilisateur, d'activité quotidienne, d'activité moyenne et de performance
     const [userData, setUserData] = useState(null);
     const [activityData, setActivityData] = useState(null);
@@ -18,14 +25,19 @@ export function UserProvider({ children }) {
 
 
     useEffect(() => {
-      // ID utilisateur fixe (12 dans cet exemple)
-      const userId = 12; 
+
+     const mock =  false;
+   
       // Fonction asynchrone pour récupérer les données
       const fetchData = async () => {
         try {
+          if ( !userId) {
+            // Redirige vers la page d'erreur si l'ID n'est ni 12 ni 18
+            return <Navigate to="/error" />;
+          }
           let userResponse, activityResponse, averagesResponse, performanceResponse;
           // Appel asynchrone de la fonction getUsers avec l'ID utilisateur
-          userResponse = await getUsers(userId);
+          userResponse = await getUsers(userId,mock );
           // Vérification si la réponse de getUsers est disponible
           if (userResponse) {
           // Mise à jour de l'état userData avec les données récupérées de l'utilisateur
@@ -35,7 +47,7 @@ export function UserProvider({ children }) {
             console.error("Erreur lors de la récupération des données de l'utilisateur");
           }
           // Appel asynchrone de la fonction getDailyActivity avec l'ID utilisateur
-          activityResponse = await getDailyActivity(userId);
+          activityResponse = await getDailyActivity(userId,mock );
           // Vérification si la réponse de getDailyActivity est disponible
           if (activityResponse) {
             // Mise à jour de l'état activityData avec les données d'activité quotidienne récupérées
@@ -45,7 +57,7 @@ export function UserProvider({ children }) {
             console.error("Erreur lors de la récupération des données d'activité quotidienne");
           }
           // Appel asynchrone de la fonction getAverages avec l'ID utilisateur
-          averagesResponse = await getAverages(userId);
+          averagesResponse = await getAverages(userId,mock );
           // Vérification si la réponse de getAverages est disponible
           if (averagesResponse) {
             // Mise à jour de l'état averagesData avec les données d'activité moyenne récupérées
@@ -55,7 +67,7 @@ export function UserProvider({ children }) {
             console.error("Erreur lors de la récupération des données d'activité moyenne");
           }
           // Appel asynchrone de la fonction getPerformanceData avec l'ID utilisateur
-          performanceResponse = await getPerformanceData(userId);
+          performanceResponse = await getPerformanceData(userId,mock );
           // Vérification si la réponse de getPerformanceData est disponible
           if (performanceResponse) {
             // Mise à jour de l'état performanceData avec les données de performance récupérées
@@ -72,8 +84,8 @@ export function UserProvider({ children }) {
       };
     // Appel de la fonction fetchData au montage du composant (une seule fois grâce au tableau de dépendances vide [])
       fetchData(); 
-    }, []); // Le tableau vide indique que cette fonction d'effet n'a pas de dépendances, elle ne s'exécute qu'une seule fois après le montage du composant
-    
+    }, [userId]); // Le tableau vide indique que cette fonction d'effet n'a pas de dépendances, elle ne s'exécute qu'une seule fois après le montage du composant
+
   // Rendu du contexte avec les données utilisateur pour que les composants enfants puissent y accéder
   // Retourne le contexte utilisateur avec les données d'utilisateur, d'activité, d'activité moyenne et de performance
     return (

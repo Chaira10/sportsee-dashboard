@@ -12,8 +12,8 @@ import {
 import { useUser } from "../../../context/Context";
 import "./LineChart.css";
 
-// Fonction de composant LineCharts prenant userId comme propriété.
-function LineCharts({ userId }) {
+// Fonction de composant LineCharts.
+function LineCharts() {
   // Utilisation du hook useUser pour obtenir averagesData et error depuis le contexte.
   const { averagesData, error } = useUser();
   console.log(averagesData);

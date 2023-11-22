@@ -5,7 +5,7 @@ import { useUser } from "../../../context/Context";
 // Tableau des couleurs pour les segments du graphique
 const COLORS = ["red", "#FBFBFB "];
 
-function PieCharts({ userId }) {
+function PieCharts() {
   // Récupération des données utilisateur et gestion des erreurs
   const { userData, error } = useUser();
   console.log(userData);
@@ -60,7 +60,7 @@ function PieCharts({ userId }) {
     <ResponsiveContainer width="100%" height="100%">
       {/* Graphique en secteurs (camembert) */}
       <PieChart>
-        {/* Cercle central pour un effet de trou */}
+        {/* Cercle central pour le background blanc */}
         <circle cx="50%" cy="50%" fill="white" r={circleRadius}></circle>
         {/* Texte au-dessus du graphique pour indiquer le type de données */}
         <text

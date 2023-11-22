@@ -29,4 +29,4 @@ Installez les dépendances avec npm install
 
 Lancer le front-end avec npm start port 3001 par défaut
 
-Ouvrez `http://localhost:3001` pour l'afficher dans votre navigateur.
+Ouvrez `http://localhost:3001/12` ou `http://localhost:3001/18` pour l'afficher dans votre navigateur.
